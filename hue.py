@@ -42,12 +42,10 @@ def printOnOffMenu():
 
 def hueOn():
         b = Bridge(target)
-        #b.connect()
         b.set_light([1,2,3,4],'on', True)
 def hueOff():
         target = input("Please enter the IP Address of your Hue Bridge: ")
         b = Bridge(target)
-        #b.connect()
         b.set_light([1,2,3,4],'on', False)
 
 
@@ -56,6 +54,9 @@ def discoverLights():
         lights = b.get_light_objects('id')
         print(lights)
 
+def auth():
+    b = Bridge(target)
+    b.connect()
 
 
 
@@ -102,11 +103,12 @@ def colorMenu():
 
 def printMainMenu():
     printHeader()
-    print("1. Connect to Bridge")
+    print("1. Specify Target Address")
     print("2. Discover Hue lights")
     print("3. Control Lights")
     print("4. Work in Progress")
     print("5. Color Menu")
+    print("6. Authenticate with bridge (Only needs to be done once)")
     #print ("4. Data Mine Hue Lights") ## work in progress\
     selection = ''
     while selection != 0:
@@ -129,6 +131,10 @@ def printMainMenu():
         elif selection == 5:
             selection = 0
             colorMenu()
+        elif selection == 6:
+            selection = 0
+            auth()
+            printMainMenu
         else:
             input("Please make sure you specified the correct option!")
             #try putting while loop into function so that the error message is displayed and then re-opens in the menu
