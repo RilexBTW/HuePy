@@ -5,8 +5,6 @@ All notable changes to this project will be documented in this file.
 ## [0.0.3] - 2022-03-08
 ### Changed
 - Move all menus into functions
-### Fixed
--
 
 ## [0.0.2] - 2022-03-06
 ### Fixed
