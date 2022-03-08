@@ -96,7 +96,7 @@ def colorMenu():
 
 # send get requests hue bridge to get status of bulbs
 # uncomment when building recon tool
-#r = requests.get('http://10.0.0.209')
+#r = requests.get(target)
 
 
 
