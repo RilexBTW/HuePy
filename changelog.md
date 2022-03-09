@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - Main Menu to be more clean
 ### Added
 - Config.py file to fix the issue defining the target IP
+- Help menu 
 ### Fixed
 - Target is not defined error / Target was previously defined error
 ### Removed
