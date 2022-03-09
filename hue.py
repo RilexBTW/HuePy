@@ -49,10 +49,10 @@ def printOnOffMenu():
 
 def hueOn():
         b = Bridge(target)
-        b.set_light([3,4,5,6],'on', True)
+        b.set_light(selectedLights,'on', True)
 def hueOff():
         b = Bridge(target)
-        b.set_light([3,4,5,6],'on', False)
+        b.set_light(selectedLights,'on', False)
 
 
 def discoverLights():
