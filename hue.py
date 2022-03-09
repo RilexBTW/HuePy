@@ -22,6 +22,8 @@ def printOnOffMenu():
     printHeader()
     print("1. Turn the lights on")
     print("2. Turn the lights off")
+    print("")
+    print("[3.] Exit back to main menu")
 
     onoffselect = int(input("Please select your option: "))
     while onoffselect != 0:
@@ -29,10 +31,16 @@ def printOnOffMenu():
             onoffselect = 0
             print("Turning Lights On")
             hueOn()
+            printOnOffMenu()
         if onoffselect == 2:
             onoffselect = 0
             print("Turning Lights off")
             hueOff()
+            printOnOffMenu()
+
+        if onoffselect == 3:
+            onoffselect = 0
+            printMainMenu()
         else:
             input("Please make sure you specified the correct option!")
 
@@ -41,10 +49,10 @@ def printOnOffMenu():
 
 def hueOn():
         b = Bridge(target)
-        b.set_light([1,2,3,4],'on', True)
+        b.set_light([3,4,5,6],'on', True)
 def hueOff():
         b = Bridge(target)
-        b.set_light([1,2,3,4],'on', False)
+        b.set_light([3,4,5,6],'on', False)
 
 
 def discoverLights():
@@ -101,20 +109,18 @@ def colorMenu():
 
 def printMainMenu():
     printHeader()
-    print("1. Specify Target Address")
-    print("2. Discover Hue lights")
-    print("3. Control Lights")
-    print("4. Work in Progress")
-    print("5. Color Menu")
-    print("6. Authenticate with bridge (Only needs to be done once)")
-    print("7. Print Target Address")
-    #print ("4. Data Mine Hue Lights") ## work in progress\
+    print("[1.] Authenticate with bridge (Only needs to be done once)")
+    print("[2.] Discover Hue lights")
+    print("[3.] Turn Lights On/Off")
+    print("[4.] Color Menu")
+    print("")
+    print("[5.] Exit")
     selection = ''
     while selection != 0:
         selection = int(input("Please select your option: "))
         if selection == 1:
             selection = 0
-            target = input("Please enter your target IP: ")
+            auth()
             printMainMenu()
         elif selection == 2:
             selection = 0
@@ -125,19 +131,10 @@ def printMainMenu():
             printOnOffMenu()
         elif selection == 4:
             selection = 0
-            print("work in progress")
-            #dataMineLights ## work in progress
+            colorMenu()
         elif selection == 5:
             selection = 0
-            colorMenu()
-        elif selection == 6:
-            selection = 0
-            auth()
-            printMainMenu()
-        elif selection == 7:
-            selection = 0
-            print(target)
-
+            return
         else:
             input("Please make sure you specified the correct option!")
             #try putting while loop into function so that the error message is displayed and then re-opens in the menu
