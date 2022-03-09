@@ -84,7 +84,7 @@ def colorMenu():
         elif colorChoice == 2:
             colorChoice = 0
             print("Blue")
-        elif colorCoice == 3:
+        elif colorChoice == 3:
             colorChoice = 0
             print("Purple")
         elif colorChoice == 4:
