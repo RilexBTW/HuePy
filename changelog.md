@@ -5,11 +5,14 @@ All notable changes to this project will be documented in this file.
 ## [0.0.3] - 2022-03-08
 ### Changed
 - Move all menus into functions
+- Main Menu to be more clean
 ### Added
 - Config.py file to fix the issue defining the target IP
 ### Fixed
 - Target is not defined error / Target was previously defined error
-
+### Removed
+- Remove Hardcoding of target IP
+-
 ## [0.0.2] - 2022-03-06
 ### Fixed
 - Fix menu infinite loop
