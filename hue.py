@@ -1,10 +1,9 @@
 #!/usr/bin/python
 import requests
 import os
+from config import *
 from phue import Bridge
 lights = Bridge.lights
-target = ''
-
 
 def clearConsole():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -44,7 +43,6 @@ def hueOn():
         b = Bridge(target)
         b.set_light([1,2,3,4],'on', True)
 def hueOff():
-        target = input("Please enter the IP Address of your Hue Bridge: ")
         b = Bridge(target)
         b.set_light([1,2,3,4],'on', False)
 
@@ -109,6 +107,7 @@ def printMainMenu():
     print("4. Work in Progress")
     print("5. Color Menu")
     print("6. Authenticate with bridge (Only needs to be done once)")
+    print("7. Print Target Address")
     #print ("4. Data Mine Hue Lights") ## work in progress\
     selection = ''
     while selection != 0:
@@ -134,7 +133,11 @@ def printMainMenu():
         elif selection == 6:
             selection = 0
             auth()
-            printMainMenu
+            printMainMenu()
+        elif selection == 7:
+            selection = 0
+            print(target)
+
         else:
             input("Please make sure you specified the correct option!")
             #try putting while loop into function so that the error message is displayed and then re-opens in the menu
