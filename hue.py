@@ -9,7 +9,7 @@ def clearConsole():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def printHeader():
-    print(30 * "-" , "HUE APP" , 30 * "-")
+    print(30 * "-" , "HUE PY" , 30 * "-")
 
 #def bridgeConnect():
 #    target = input("Please enter the IP Address of your Hue Bridge: ")
