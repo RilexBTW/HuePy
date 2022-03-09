@@ -24,7 +24,7 @@ Once you have finished configuring the config.py file, save the file and now you
 
 ```console
 $ python3 hue.py
------------------------------- HUE APP ------------------------------
+------------------------------ HUE PY ------------------------------
 [1.] Authenticate with bridge (Only needs to be done once)
 [2.] Discover Hue lights
 [3.] Turn Lights On/Off
