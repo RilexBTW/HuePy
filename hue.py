@@ -17,6 +17,12 @@ def printHeader():
 #    b.connect()
 
 
+def helpMenu():
+    printHeader()
+    print("For more help visit https://www.github.com/rilexbtw/huepy")
+    print("If you're having trouble connecting to your bridge, first make sure you have specified the correct IP Address in the config.py file")
+    print("A quick way to figure out the IP address of your bridge is through the Phillips Hue app on your phone.")
+    print('This can be found by opening the Phillips Hue app and going to Settings > My Hue System and then clicking the "I" icon next to your bridges name.')
 
 def printOnOffMenu():
     printHeader()
@@ -113,8 +119,9 @@ def printMainMenu():
     print("[2.] Discover Hue lights")
     print("[3.] Turn Lights On/Off")
     print("[4.] Color Menu")
+    print("[5.] Help Menu")
     print("")
-    print("[5.] Exit")
+    print("[10.] Exit")
     selection = ''
     while selection != 0:
         selection = int(input("Please select your option: "))
@@ -133,6 +140,9 @@ def printMainMenu():
             selection = 0
             colorMenu()
         elif selection == 5:
+            selection = 0
+            helpMenu()
+        elif selection == 10:
             selection = 0
             return
         else:
